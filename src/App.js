@@ -34,9 +34,16 @@ function App() {
         </form>
         
         <div className="watchlist-container">
-            <h1>Watchlist</h1>
+            <h1>WATCHLIST</h1>
+            <div className="ul">
+              <li>This is supposed to be appended item</li>
+
+            </div>
+          
         </div>
       </div>
+      <div className="coin-list">
+      <h1>Coins by Market Cap</h1>
       {filteredCoins.map(coin => {
         return (
           <Coin 
@@ -51,6 +58,7 @@ function App() {
           />
         )
       })}
+    </div>
     </div>
   );
 }

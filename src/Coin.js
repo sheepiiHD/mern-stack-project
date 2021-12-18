@@ -9,7 +9,7 @@ const element = <FontAwesomeIcon icon={faStar} />
 const Coin = ({name,image,symbol,price,priceChange,marketcap, addToWatchlist }) => {
     return (
         <>
-        
+        <form action="/addToWatchlist" method="post">
         <div className="coin-container">
             <div className="coin-row">
                 <div className="coin">
@@ -20,17 +20,19 @@ const Coin = ({name,image,symbol,price,priceChange,marketcap, addToWatchlist }) 
                 <div className="coin-data">
                     <p className="coin-price">{price}kr</p>
                     {priceChange < 0 ? (
-                        <p className="coin-percent red">{priceChange.toFixed(2)}%</p>)
-                        :(<p className="coin-percent green">{priceChange.toFixed(2)}%</p>)
+                        <p className="coin-percent red">{priceChange}%</p>)
+                        :(<p className="coin-percent green">{priceChange}%</p>)
                     }
                     <p className="coin-marketcap">
                         {marketcap.toLocaleString()}kr
                     </p>
-                    <button className="coin-watchlist-button" onClick={() => console.log('Click')}>{element}</button>
+                    
+                    <button type="submit"className="coin-watchlist-button" onClick={() => console.log('Click')}>{element}</button>
+                    
                 </div>
             </div>
         </div>
-
+        </form>
         </>
     )
 }
